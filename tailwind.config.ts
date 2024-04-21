@@ -31,6 +31,10 @@ const config: Config = {
 				},
 				grey: '#83888F',
 			},
+			fontFamily: {
+				'barlow': ['Barlow', 'sans-serif'],
+				'fraunces': ['Fraunces', 'serif']
+			  }
 		},
 	},
 	plugins: [],
