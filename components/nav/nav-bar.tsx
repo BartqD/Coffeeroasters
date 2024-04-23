@@ -1,11 +1,11 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import logo from '../../public/assets/shared/desktop/logo.svg'
 import closeIcon from '../../public/assets/shared/mobile/icon-close.svg'
 import hamburgerIcon from '../../public/assets/shared/mobile/icon-hamburger.svg'
 import Link from 'next/link'
 import Image from 'next/image'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, motion, MotionConfig } from 'framer-motion'
 
 const NavBar: React.FC = () => {
 	const [active, setActive] = useState(false)
@@ -29,6 +29,39 @@ const NavBar: React.FC = () => {
 			opacity: 0,
 			transition: {
 				opacity: { duration: 0.2 },
+			},
+		},
+	}
+
+	const VARIANTS = {
+		top: {
+			open: {
+				rotate: ['0deg', '0deg', '45deg'],
+				top: ['35%', '50%', '50%'],
+			},
+			closed: {
+				rotate: ['45deg', '0deg', '0deg'],
+				top: ['50%', '50%', '35%'],
+			},
+		},
+		middle: {
+			open: {
+				rotate: ['0deg', '0deg', '-45deg'],
+			},
+			closed: {
+				rotate: ['-45deg', '0deg', '0deg'],
+			},
+		},
+		bottom: {
+			open: {
+				rotate: ['0deg', '0deg', '45deg'],
+				bottom: ['35%', '50%', '50%'],
+				left: '50%',
+			},
+			closed: {
+				rotate: ['45deg', '0deg', '0deg'],
+				bottom: ['50%', '50%', '35%'],
+				left: 'calc(50% + 4px)',
 			},
 		},
 	}
@@ -80,9 +113,42 @@ const NavBar: React.FC = () => {
 				<Image src={logo} width={163} height={18} alt='coffee bean logo' />
 			</Link>
 
+			<MotionConfig
+				transition={{
+					duration: 0.5,
+					ease: 'easeInOut',
+				}}>
+				<motion.button
+					initial={false}
+					animate={active ? 'open' : 'closed'}
+					className='ml-auto md:hidden p-1 relative h-6 w-6 rounded-full transition-colors hover:bg-light-cyan/20  '
+					onClick={handleNav}>
+					<motion.span
+						variants={VARIANTS.top}
+						className='absolute h-0.5 w-4 bg-dark-grey'
+						style={{ y: '-50%', left: '50%', x: '-50%', top: '35%' }}
+					/>
+					<motion.span
+						variants={VARIANTS.middle}
+						className='absolute h-0.5 w-4 bg-dark-grey'
+						style={{ left: '50%', x: '-50%', top: '50%', y: '-50%' }}
+					/>
+					<motion.span
+						variants={VARIANTS.bottom}
+						className='absolute h-0.5 w-2 bg-dark-grey'
+						style={{
+							x: '-50%',
+							y: '50%',
+							bottom: '35%',
+							left: 'calc(50% + 4px)',
+						}}
+					/>
+				</motion.button>
+			</MotionConfig>
+			{/* 
 			<button className='ml-auto md:hidden' onClick={handleNav}>
 				<Image src={!active ? hamburgerIcon : closeIcon} width={16} height={15} alt='coffee bean logo' />
-			</button>
+			</button> */}
 			<AnimatePresence mode='wait'>{active ? mobileLinks : desktopLinks}</AnimatePresence>
 		</nav>
 	)
