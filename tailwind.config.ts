@@ -31,10 +31,7 @@ const config: Config = {
 				},
 				grey: '#83888F',
 			},
-			fontFamily: {
-				barlow: ['var(--font-barlow)'],
-				fraunces: ['var(--font-fraunces)']
-			  }
+			fontFamily: { barlow: ['var(--font-barlow)'], fraunces: ['var(--font-fraunces)'] },
 		},
 	},
 	plugins: [],
