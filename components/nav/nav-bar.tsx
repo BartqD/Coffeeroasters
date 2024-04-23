@@ -1,8 +1,6 @@
 'use client'
 import React, { useState } from 'react'
 import logo from '../../public/assets/shared/desktop/logo.svg'
-import closeIcon from '../../public/assets/shared/mobile/icon-close.svg'
-import hamburgerIcon from '../../public/assets/shared/mobile/icon-hamburger.svg'
 import Link from 'next/link'
 import Image from 'next/image'
 import { AnimatePresence, motion, MotionConfig } from 'framer-motion'
