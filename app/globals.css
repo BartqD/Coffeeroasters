@@ -13,17 +13,18 @@ h1,
 h2,
 h3,
 h4 {
-	font-family: var(--font-fraunces);
+font-family: var(--font-fraunces)
 }
 
 
 @layer components {
+	
 	.link {
-		@apply cursor-pointer p-1 px-5 transition ease-in-out duration-300 font-bold ;
+		@apply cursor-pointer p-1 px-5 transition ease-in-out duration-300 font-bold;
 	  }
 	  
 	  .link:hover {
-		@apply text-light-cyan;
+		@apply text-light-cyan scale-110;
 	  }
 	  
 	  .link:focus {
