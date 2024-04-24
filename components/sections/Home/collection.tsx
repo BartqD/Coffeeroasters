@@ -44,6 +44,7 @@ export default function Collection() {
                                 className="px-10"
                                 width={452}
                                 height={356}
+                                quality={70}
                             />
                       
                         <div className="flex flex-col justify-start">
