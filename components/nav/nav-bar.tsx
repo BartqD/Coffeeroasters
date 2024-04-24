@@ -83,7 +83,7 @@ const NavBar: React.FC = () => {
 				</Link>
 			</motion.div>
 
-			<motion.div  variants={mobileLinksVariants} key={4}>
+			<motion.div variants={mobileLinksVariants} key={4}>
 				<Link className='link' href='/pricing'>
 					Create Your Plan
 				</Link>
@@ -117,6 +117,7 @@ const NavBar: React.FC = () => {
 					ease: 'easeInOut',
 				}}>
 				<motion.button
+					aria-label='Navbar button'
 					initial={false}
 					animate={active ? 'open' : 'closed'}
 					className='z-20 ml-auto md:hidden p-1 relative h-6 w-6 rounded-full transition-colors hover:bg-light-cyan/20  '
