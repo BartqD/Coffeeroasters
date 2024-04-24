@@ -4,6 +4,7 @@ import Hero from '@/components/sections/hero/hero'
 import heroImgM from '../public/assets/home/mobile/image-hero-coffeepress.jpg'
 import heroImgT from '../public/assets/home/tablet/image-hero-coffeepress.jpg'
 import heroImgD from '../public/assets/home/desktop/image-hero-coffeepress.jpg'
+import Collection from '@/components/sections/Home/collection'
 
 export default function Home() {
 	return (
@@ -19,6 +20,8 @@ export default function Home() {
 					heroImgT={heroImgT}
 					heroImgD={heroImgD}
 					linkUrl='/plan'></Hero>
+					
+					<Collection></Collection>
 			</main>
 		</Fragment>
 	)
