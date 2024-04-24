@@ -71,7 +71,7 @@ const NavBar: React.FC = () => {
 			animate='open'
 			exit='closed'
 			variants={mobileLinksVariants}
-			className=' absolute inset-0 w-full h-screen flex flex-col bg-gradient-to-b text-2xl items-center mt-20 marker:uppercase md:text-sm font-bold text-dark-grey font-fraunces gap-8 from-light-cream to-light-cream/90'>
+			className=' absolute z-10 inset-0 p-20 w-full h-svh flex flex-col bg-gradient-to-b text-2xl items-center marker:uppercase md:text-sm font-bold text-dark-grey font-fraunces gap-8 from-light-cream to-light-cream/90'>
 			<motion.div className='mt-10' variants={mobileLinksVariants} key={2}>
 				<Link className='link' href='/'>
 					Home
@@ -106,8 +106,8 @@ const NavBar: React.FC = () => {
 	)
 
 	return (
-		<nav className='max-w-[1440px] z-20 mx-auto flex items-center justify-between flex-wrap bg-light-cream py-8 px-6 relative'>
-			<Link href='#' className='inline-flex logo'>
+		<nav className='max-w-[1440px] mx-auto z-20 flex items-center justify-between flex-wrap bg-light-cream py-8 px-6 relative'>
+			<Link href='#' className=' z-20 inline-flex logo'>
 				<Image src={logo} width={163} height={18} alt='coffee bean logo' />
 			</Link>
 
@@ -119,7 +119,7 @@ const NavBar: React.FC = () => {
 				<motion.button
 					initial={false}
 					animate={active ? 'open' : 'closed'}
-					className='ml-auto md:hidden p-1 relative h-6 w-6 rounded-full transition-colors hover:bg-light-cyan/20  '
+					className='z-20 ml-auto md:hidden p-1 relative h-6 w-6 rounded-full transition-colors hover:bg-light-cyan/20  '
 					onClick={handleNav}>
 					<motion.span
 						variants={VARIANTS.top}

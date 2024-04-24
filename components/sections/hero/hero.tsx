@@ -26,17 +26,17 @@ const Hero: React.FC<HeroProps> = ({
 	return (
 		<section className='flex pb-24'>
 			<div className='max-w-[1440px] flex flex-col w-full p-6 mx-auto min-h-[400px] h-[600px]  text-white '>
-				<div className='z-10 flex absolute flex-col md:justify-centermd:h-auto gap-y-10 left-0 md:left-auto text-center md:text-left text-lightCream p-10 w-full md:w-3/4 lg:w-2/3'>
+				<div className='z-10 flex absolute flex-col md:justify-centermd:h-auto gap-y-10 left-0 md:left-auto text-center md:text-left text-lightCream p-10 w-full md:w-3/4 lg:w-[600px]'>
 					<div>
 						<h1 className={titleStyle}>{title}</h1>
 					</div>
 					<div>
-						<p className='font-barlow md:w-1/2 px-6 md:px-0'>{description}</p>
+						<p className='font-barlow px-6 md:px-0'>{description}</p>
 					</div>
 					{linkText && (
-						<div className='flex justify-center md:justify-start md:py-10'>
+						<div className='flex justify-center md:justify-start '>
 							<Link
-								className='font-fraunces text-sm font-bold rounded-sm bg-darkCyan p-3 hover:bg-lightCyan text-center w-1/2 md:w-2/5 lg:w-1/5'
+								className='text-sm font-bold rounded-md bg-dark-cyan p-3 hover:bg-light-cyan duration-300  text-center w-1/2 md:w-2/5 lg:w-2/5'
 								href={linkUrl}>
 								{linkText}
 							</Link>
