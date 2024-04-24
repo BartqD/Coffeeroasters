@@ -71,8 +71,8 @@ const NavBar: React.FC = () => {
 			animate='open'
 			exit='closed'
 			variants={mobileLinksVariants}
-			className=' absolute z-10 inset-0 p-20 w-full h-svh flex flex-col bg-gradient-to-b text-2xl items-center marker:uppercase md:text-sm font-bold text-dark-grey font-fraunces gap-8 from-light-cream to-light-cream/90'>
-			<motion.div className='mt-10' variants={mobileLinksVariants} key={2}>
+			className='absolute z-10 inset-0 pt-20 w-full h-svh flex flex-col bg-gradient-to-b text-2xl items-center md:text-sm font-bold text-dark-grey font-fraunces gap-8 from-light-cream to-light-cream/90'>
+			<motion.div className='mt-10 content-center' variants={mobileLinksVariants} key={2}>
 				<Link className='link' href='/'>
 					Home
 				</Link>
@@ -83,7 +83,7 @@ const NavBar: React.FC = () => {
 				</Link>
 			</motion.div>
 
-			<motion.div variants={mobileLinksVariants} key={4}>
+			<motion.div  variants={mobileLinksVariants} key={4}>
 				<Link className='link' href='/pricing'>
 					Create Your Plan
 				</Link>
@@ -106,7 +106,7 @@ const NavBar: React.FC = () => {
 	)
 
 	return (
-		<nav className='max-w-[1440px] mx-auto z-20 flex items-center justify-between flex-wrap bg-light-cream py-8 px-6 relative'>
+		<nav className=' fixed  top-0 left-0 right-0 max-w-[1440px] w-full mx-auto z-20 flex items-center justify-between flex-wrap bg-light-cream py-8 px-6'>
 			<Link href='#' className=' z-20 inline-flex logo'>
 				<Image src={logo} width={163} height={18} alt='coffee bean logo' />
 			</Link>
@@ -143,10 +143,6 @@ const NavBar: React.FC = () => {
 					/>
 				</motion.button>
 			</MotionConfig>
-			{/* 
-			<button className='ml-auto md:hidden' onClick={handleNav}>
-				<Image src={!active ? hamburgerIcon : closeIcon} width={16} height={15} alt='coffee bean logo' />
-			</button> */}
 			<AnimatePresence mode='wait'>{active ? mobileLinks : desktopLinks}</AnimatePresence>
 		</nav>
 	)

@@ -24,7 +24,7 @@ const Hero: React.FC<HeroProps> = ({
 	titleStyle,
 }) => {
 	return (
-		<section className='flex pb-24'>
+		<section className='flex pb-24 mt-20'>
 			<div className='max-w-[1440px] flex flex-col w-full p-6 mx-auto min-h-[400px] h-[600px]  text-white '>
 				<div className='z-10 flex absolute flex-col md:justify-centermd:h-auto gap-y-10 left-0 md:left-auto text-center md:text-left text-lightCream p-10 w-full md:w-3/4 lg:w-[600px]'>
 					<div>
@@ -46,27 +46,27 @@ const Hero: React.FC<HeroProps> = ({
 				<div className='z-0 relative w-full min-h-[400px] h-[600px] overflow-hidden'>
 					<Image
 						className='rounded-lg'
-						objectFit='cover'
-						objectPosition='center'
-						layout='fill'
+						style={{ objectFit: 'cover', objectPosition: 'center' }}
+						fill={true}
 						src={heroImgM}
 						alt='coffee cup'
+						loading = 'eager'
 					/>
 					<Image
 						className='hidden lg:hidden md:flex rounded-lg'
-						objectFit='cover'
-						objectPosition='center'
-						layout='fill'
+						style={{ objectFit: 'cover', objectPosition: 'center' }}
+						fill={true}
 						src={heroImgT}
 						alt='coffee cup'
+						loading = 'eager'
 					/>
 					<Image
 						className='hidden lg:flex rounded-lg'
-						objectFit='cover'
-						objectPosition='center'
-						layout='fill'
+						style={{ objectFit: 'cover', objectPosition: 'center' }}
+						fill={true}
 						src={heroImgD}
 						alt='coffee cup'
+						loading = 'eager'
 					/>
 				</div>
 			</div>
