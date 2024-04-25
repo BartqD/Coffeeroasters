@@ -5,6 +5,7 @@ import heroImgM from '../public/assets/home/mobile/image-hero-coffeepress.jpg'
 import heroImgT from '../public/assets/home/tablet/image-hero-coffeepress.jpg'
 import heroImgD from '../public/assets/home/desktop/image-hero-coffeepress.jpg'
 import Collection from '@/components/sections/Home/collection'
+import WhyChoose from '@/components/sections/Home/why-choose'
 
 export default function Home() {
 	return (
@@ -22,6 +23,7 @@ export default function Home() {
 					linkUrl='/plan'></Hero>
 					
 					<Collection></Collection>
+					<WhyChoose></WhyChoose>
 			</main>
 		</Fragment>
 	)

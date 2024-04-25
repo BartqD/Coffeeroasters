@@ -27,7 +27,8 @@ const config: Config = {
 					cream: '#FEFCF7',
 					cyan: '#66D2CF',
 					yellow: '#F4F1EB',
-					salmon: 'FDD6BA',
+					salmon: '#FDD6BA',
+					grey: '#2C343E'
 				},
 				grey: '#83888F',
 			},
