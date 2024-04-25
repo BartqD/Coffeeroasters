@@ -36,13 +36,11 @@ const WhyChoose = () => {
 						<div
 							className='flex flex-col items-center content-center text-center gap-6 min-h-[24rem] md:min-h-[2rem] lg:min-h-[20rem] md:flex-row lg:flex-col p-6 pt-16 md:p-10 md:w-4/5 bg-dark-cyan text-light-cream rounded-lg'
 							key={index}>
-							<div className=' relative w-[72px] h-[72px]'>
-								<Image
-									src={advantage.icon}
-									alt={advantage.icon.split('/').pop()?.split('.')[0]!}
-									fill
-									sizes='(max-width: 768px) 100vw, 33vw'></Image>
-							</div>
+							<Image
+								src={advantage.icon}
+								alt={advantage.icon.split('/').pop()?.split('.')[0]!}
+								width={72}
+								height={72}></Image>
 							<h3>{advantage.title}</h3>
 							<p>{advantage.description}</p>
 						</div>
