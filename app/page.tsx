@@ -6,6 +6,7 @@ import heroImgT from '../public/assets/home/tablet/image-hero-coffeepress.jpg'
 import heroImgD from '../public/assets/home/desktop/image-hero-coffeepress.jpg'
 import Collection from '@/components/sections/Home/collection'
 import WhyChoose from '@/components/sections/Home/why-choose'
+import HowItWorks from '@/components/sections/Home/how-it-works'
 
 export default function Home() {
 	return (
@@ -24,6 +25,7 @@ export default function Home() {
 					
 					<Collection></Collection>
 					<WhyChoose></WhyChoose>
+					<HowItWorks></HowItWorks>
 			</main>
 		</Fragment>
 	)

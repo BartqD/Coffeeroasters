@@ -16,7 +16,7 @@ const config: Config = {
 		extend: {
 			colors: {
 				dark: {
-					cyan: '#0A615F',
+					cyan: '#0E8784',
 					grey: '#333D4B',
 				},
 				pale: {
