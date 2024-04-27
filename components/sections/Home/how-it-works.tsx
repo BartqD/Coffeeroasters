@@ -39,7 +39,7 @@ export default function HowItWorks() {
 					</div>
 				))}
 			</div>
-			<div className='flex justify-center md:justify-start w-full md:w-3/4 lg:w-[500px] pt-6 pb-20'>
+			<div className='flex justify-center md:justify-start w-full md:w-3/4 lg:w-[500px] pt-6 '>
 				<Link href='/plan' className='process-link'>
 					Create your plan
 				</Link>

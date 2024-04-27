@@ -32,4 +32,16 @@ h4 {
 	.process-link {
 		@apply text-sm font-bold rounded-md bg-dark-cyan p-3 hover:bg-light-cyan duration-300  text-center w-3/4 md:w-2/5 lg:w-2/5 text-light-cream;
 	}
+
+	.social-logo {
+		@apply w-6 h-6 duration-300;
+	}
+
+	.social-logo:hover {
+		@apply w-7 h-7  text-light-cyan scale-110 ;
+	}
+
+	.social-link:focus {
+		@apply outline-none text-light-cyan ring-opacity-100;
+	}
 }

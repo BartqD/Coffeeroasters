@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='en' className={`${fraunces.variable} ${barlow.variable}`}>
-			<body className='bg-light-cream'>{children}</body>
+			<body className='bg-light-cream max-w-[1440px] mx-auto'>{children}</body>
 		</html>
 	)
 }

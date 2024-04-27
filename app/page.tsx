@@ -1,4 +1,4 @@
-import NavBar from '../components/nav/nav-bar'
+import NavBar from '../components/ui/nav-bar'
 import { Fragment } from 'react'
 import Hero from '@/components/sections/hero/hero'
 import heroImgM from '../public/assets/home/mobile/image-hero-coffeepress.jpg'
@@ -7,6 +7,7 @@ import heroImgD from '../public/assets/home/desktop/image-hero-coffeepress.jpg'
 import Collection from '@/components/sections/Home/collection'
 import WhyChoose from '@/components/sections/Home/why-choose'
 import HowItWorks from '@/components/sections/Home/how-it-works'
+import Footer from '@/components/ui/footer'
 
 export default function Home() {
 	return (
@@ -27,6 +28,7 @@ export default function Home() {
 					<WhyChoose></WhyChoose>
 					<HowItWorks></HowItWorks>
 			</main>
+			<Footer></Footer>
 		</Fragment>
 	)
 }
