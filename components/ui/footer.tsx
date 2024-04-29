@@ -19,10 +19,10 @@ export default function Footer() {
 						<Link className='link' href='/'>
 							Home
 						</Link>
-						<Link className='link' href='/about'>
+						<Link className='link' href='/about-us'>
 							About Us
 						</Link>
-						<Link className='link' href='/pricing'>
+						<Link className='link' href='/create-plan'>
 							Create Your Plan
 						</Link>
 					</div>
@@ -31,10 +31,10 @@ export default function Footer() {
 					<Link href='#' aria-label='Facebook Profile' className=' social-link'>
 						<LiaFacebookSquare className='social-logo' />
 					</Link>
-					<Link href='#' aria-label='Facebook Profile' className=' social-link '>
+					<Link href='#' aria-label='Twitter Profile' className=' social-link '>
 						<IoLogoTwitter className='social-logo' />
 					</Link>
-					<Link href='#' aria-label='Facebook Profile' className=' social-link'>
+					<Link href='#' aria-label='Instagram Profile' className=' social-link'>
 						<FiInstagram className='social-logo' />
 					</Link>
 				</div>

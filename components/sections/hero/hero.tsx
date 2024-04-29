@@ -43,7 +43,7 @@ const Hero: React.FC<HeroProps> = ({
 						</div>
 					)}
 				</div>
-				<div className='z-0 relative w-full min-h-[400px] h-[600px] overflow-hidden'>
+				<div className='z-0 relative w-full min-h-[400px] h-[500px] overflow-hidden'>
 					<Image
 						className='rounded-lg'
 						style={{ objectFit: 'cover', objectPosition: 'center' }}

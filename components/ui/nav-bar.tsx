@@ -78,13 +78,13 @@ const NavBar: React.FC = () => {
 				</Link>
 			</motion.div>
 			<motion.div variants={mobileLinksVariants} key={3}>
-				<Link className='link' href='/about'>
+				<Link className='link' href='/about-us'>
 					About Us
 				</Link>
 			</motion.div>
 
 			<motion.div variants={mobileLinksVariants} key={4}>
-				<Link className='link' href='/pricing'>
+				<Link className='link' href='/create-plan'>
 					Create Your Plan
 				</Link>
 			</motion.div>
@@ -96,10 +96,10 @@ const NavBar: React.FC = () => {
 			<Link className='link' href='/'>
 				Home
 			</Link>
-			<Link className='link' href='/about'>
+			<Link className='link' href='/about-us'>
 				About Us
 			</Link>
-			<Link className='link' href='/pricing'>
+			<Link className='link' href='/create-plan'>
 				Create Your Plan
 			</Link>
 		</div>

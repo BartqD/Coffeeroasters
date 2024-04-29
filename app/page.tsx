@@ -22,7 +22,7 @@ export default function Home() {
 					heroImgM={heroImgM}
 					heroImgT={heroImgT}
 					heroImgD={heroImgD}
-					linkUrl='/plan'></Hero>
+					linkUrl='/create-plan'></Hero>
 					
 					<Collection></Collection>
 					<WhyChoose></WhyChoose>
