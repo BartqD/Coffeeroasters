@@ -14,7 +14,7 @@ export default function Commitment() {
 						style={{ objectFit: 'cover', objectPosition: 'center' }}
 						src={commitmentImg}></Image>
 				</div>
-				<div className='flex flex-col md:w-1/2 justify-center content-center text-center md:text-left'>
+				<div className='flex flex-col md:w-1/2 justify-center content-center text-center text-dark-grey md:text-left'>
 					<h2 className='mb-7 lg:mb-8 font-bold text-3xl lg:text-4xl'>Our commitment </h2>
 					<p>
 						We’re built on a simple mission and a commitment to doing good along the way. We want to make it easy for
