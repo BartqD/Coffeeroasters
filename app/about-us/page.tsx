@@ -7,6 +7,7 @@ import heroImgM from '../../public/assets/about/mobile/image-hero-whitecup.jpg'
 import heroImgT from '../../public/assets/about/tablet/image-hero-whitecup.jpg'
 import heroImgD from '../../public/assets/about/desktop/image-hero-whitecup.jpg'
 import Commitment from '@/components/sections/about-us/commitment'
+import Headquarters from '@/components/sections/about-us/headquarters'
 
 export const metadata: Metadata = {
 	title: 'About Coffeeroasters ',
@@ -28,6 +29,7 @@ export default function Home() {
 					heroImgD={heroImgD}
 					linkUrl='/create-plan'></Hero>
 					<Commitment></Commitment>
+					<Headquarters></Headquarters>
 			</main>
 			<Footer></Footer>
 		</Fragment>
