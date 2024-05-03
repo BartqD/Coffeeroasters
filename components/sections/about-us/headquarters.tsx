@@ -34,7 +34,7 @@ export default function Headquarters() {
 	return (
 		<section className=' max-w-[1440px] mx-auto p-6 mb-28 lg:px-40'>
 
-			<div className='text-3xl text-center md:text-left mb-16 text-grey font-bold'>
+			<div className='text-2xl text-center md:text-left mb-16 text-grey font-bold'>
 				<h2>Our headquarters</h2>
 			</div>
 			<div className='flex items-center content-center flex-col md:justify-start gap-16 lg:gap-32  md:flex-row '>
