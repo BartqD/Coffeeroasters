@@ -33,6 +33,12 @@ const config: Config = {
 				grey: '#83888F',
 			},
 			fontFamily: { barlow: ['var(--font-barlow)'], fraunces: ['var(--font-fraunces)'] },
+			backgroundImage: {
+				'quality-bgD': "url('/assets/about/desktop/bg-quality.png')",
+				'quality-bgT': "url('/assets/about/tablet/bg-quality.png')",
+				'quality-bgM': "url('/assets/about/mobile/bg-quality.png')",
+				
+			  }
 		},
 	},
 	plugins: [],
