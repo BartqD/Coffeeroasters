@@ -6,6 +6,7 @@ import Hero from '@/components/sections/hero/hero'
 import heroImgM from '../../public/assets/plan/mobile/image-hero-blackcup.jpg'
 import heroImgT from '../../public/assets/plan/tablet/image-hero-blackcup.jpg'
 import heroImgD from '../../public/assets/plan/desktop/image-hero-blackcup.jpg'
+import HowItWorks from '@/components/sections/create-plan/how-it-works'
 
 
 export const metadata: Metadata = {
@@ -28,6 +29,7 @@ export default function Home() {
 					heroImgT={heroImgT}
 					heroImgD={heroImgD}
 					linkUrl='/create-plan'></Hero>
+					<HowItWorks></HowItWorks>
 			</main>
 			<Footer></Footer>
 		</Fragment>
