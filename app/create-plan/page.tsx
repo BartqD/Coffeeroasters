@@ -7,6 +7,7 @@ import heroImgM from '../../public/assets/plan/mobile/image-hero-blackcup.jpg'
 import heroImgT from '../../public/assets/plan/tablet/image-hero-blackcup.jpg'
 import heroImgD from '../../public/assets/plan/desktop/image-hero-blackcup.jpg'
 import HowItWorks from '@/components/sections/create-plan/how-it-works'
+import SelectionProcess from '@/components/sections/create-plan/selection-process'
 
 
 export const metadata: Metadata = {
@@ -30,6 +31,7 @@ export default function Home() {
 					heroImgD={heroImgD}
 					linkUrl='/create-plan'></Hero>
 					<HowItWorks></HowItWorks>
+					<SelectionProcess></SelectionProcess>
 			</main>
 			<Footer></Footer>
 		</Fragment>

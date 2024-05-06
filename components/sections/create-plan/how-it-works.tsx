@@ -20,7 +20,7 @@ export default function HowItWorks() {
 	]
 
 	return (
-		<section className='max-w-[1440px] mx-auto p-6 mb-24   '>
+		<section className='max-w-[1440px] mx-auto p-6 mb-24'>
 			<div className='flex flex-col md:flex-row p-6 lg:p-20 bg-light-grey rounded-lg '>
 				{process.map((step, index) => (
 					<div key={index} className='w-full pb-10'>
