@@ -38,6 +38,15 @@ const config: Config = {
 				'quality-bgT': "url('/assets/about/tablet/bg-quality.png')",
 				'quality-bgM': "url('/assets/about/mobile/bg-quality.png')",
 				
+			  },
+			  animation: {
+				'rotate': 'rotate 0.5s linear',
+			  },
+			  keyframes: {
+				rotate: {
+				  '0%': { transform: 'rotate(0deg)' },
+				  '100%': { transform: 'rotate(180deg)' },
+				}
 			  }
 		},
 	},
