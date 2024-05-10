@@ -12,10 +12,12 @@ type Props = {
 	title: string[]
 	options: Option[]
 	selectedTitle: React.Dispatch<React.SetStateAction<string>>
+	isOpen: boolean;
 }
 
-const Option = ({ id, title, options, selectedTitle }: Props) => {
-	const [isOpen, setIsOpen] = useState(false)
+const Option = ({ id, title, options, selectedTitle, isOpen }: Props) => {
+
+
 	const [isActive, setIsActive] = useState(0)
 
 	useEffect(() => {
@@ -33,7 +35,6 @@ const Option = ({ id, title, options, selectedTitle }: Props) => {
 				className='flex items-center justify-between w-full mb-10'
 				onClick={(e) => {
 					e.preventDefault()
-					setIsOpen((prev) => !prev)
 				}}>
 				<span className='font-bold font-fraunces text-center text-grey text-3xl'>{title}</span>
 				<AnimatePresence>
@@ -41,7 +42,7 @@ const Option = ({ id, title, options, selectedTitle }: Props) => {
 						className='relative w-5 h-3'
 						initial={{ rotate: 0 }}
 						animate={{ rotate: isOpen ? 180 : 0 }}
-						transition={{ duration: 1 }}>
+						transition={{ duration: .3 }}>
 						<Image fill src={'/assets/plan/desktop/icon-arrow.svg'} alt='arrow icon' />
 					</motion.span>
 				</AnimatePresence>
@@ -50,9 +51,10 @@ const Option = ({ id, title, options, selectedTitle }: Props) => {
 			<AnimatePresence>
 				{isOpen && (
 					<motion.div
-						initial={{ y: -200, opacity: 0 }}
-						animate={{ y: 0, opacity: 1 }}
-						exit={{ y: -100, opacity: 0 }}
+						initial={{maxHeight:0, opacity: 0 }}
+						animate={{ maxHeight:1000, opacity: 1 }}
+						exit={{ maxHeight:0, opacity: 0 }}
+						transition={{ duration: 1 }}
 						className={`flex flex-col md:flex-row gap-4 md:gap-[10px] `}>
 						{options.map((option, index) => (
 							<button

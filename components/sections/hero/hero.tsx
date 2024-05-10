@@ -24,7 +24,7 @@ const Hero: React.FC<HeroProps> = ({
 	titleStyle,
 }) => {
 	return (
-		<section className='flex pb-24 mt-20'>
+		<section className='flex  mt-20'>
 			<div className='max-w-[1440px] flex flex-col w-full p-6 mx-auto min-h-[400px] h-[600px]  '>
 				<div className='z-10 flex absolute flex-col md:justify-centermd:h-auto gap-y-10 left-0 md:left-auto text-center md:text-left text-light-cream p-10 w-full md:w-3/4 lg:w-[600px]'>
 					<div>
