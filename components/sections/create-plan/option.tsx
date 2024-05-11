@@ -12,20 +12,24 @@ type Props = {
 	title: string[]
 	options: Option[]
 	selectedTitle: React.Dispatch<React.SetStateAction<string>>
-	isOpen: boolean;
+	isOpen: boolean
+	toggleSection: (sectionId: string | null) => void
+	nextSectionId: string | null
 }
 
-const Option = ({ id, title, options, selectedTitle, isOpen }: Props) => {
-
-
-	const [isActive, setIsActive] = useState(0)
+const Option = ({ id, title, options, selectedTitle, isOpen, toggleSection,nextSectionId }: Props) => {
+	const [isActive, setIsActive] = useState(-1)
 
 	useEffect(() => {
 		const handleSelected = () => {
-			selectedTitle(options[isActive].title)
+			if (isActive !== -1) {
+				selectedTitle(options[isActive].title)
+			} else {
+				selectedTitle('_____') 
+			}
 		}
-
 		handleSelected()
+
 	}, [isActive, options, selectedTitle])
 
 	return (
@@ -33,8 +37,8 @@ const Option = ({ id, title, options, selectedTitle, isOpen }: Props) => {
 			<button
 				type='button'
 				className='flex items-center justify-between w-full mb-10'
-				onClick={(e) => {
-					e.preventDefault()
+				onClick={e => {
+					e.preventDefault(),  toggleSection(id)
 				}}>
 				<span className='font-bold font-fraunces text-center text-grey text-3xl'>{title}</span>
 				<AnimatePresence>
@@ -42,7 +46,7 @@ const Option = ({ id, title, options, selectedTitle, isOpen }: Props) => {
 						className='relative w-5 h-3'
 						initial={{ rotate: 0 }}
 						animate={{ rotate: isOpen ? 180 : 0 }}
-						transition={{ duration: .3 }}>
+						transition={{ duration: 0.3 }}>
 						<Image fill src={'/assets/plan/desktop/icon-arrow.svg'} alt='arrow icon' />
 					</motion.span>
 				</AnimatePresence>
@@ -51,16 +55,19 @@ const Option = ({ id, title, options, selectedTitle, isOpen }: Props) => {
 			<AnimatePresence>
 				{isOpen && (
 					<motion.div
-						initial={{maxHeight:0, opacity: 0 }}
-						animate={{ maxHeight:1000, opacity: 1 }}
-						exit={{ maxHeight:0, opacity: 0 }}
+						initial={{ maxHeight: 0, opacity: 0 }}
+						animate={{ maxHeight: 1000, opacity: 1 }}
+						exit={{ maxHeight: 0, opacity: 0 }}
 						transition={{ duration: 1 }}
 						className={`flex flex-col md:flex-row gap-4 md:gap-[10px] `}>
 						{options.map((option, index) => (
 							<button
 								type='button'
 								key={index}
-								onClick={() => setIsActive(index)}
+								onClick={() => {
+									setIsActive(index); 
+									toggleSection(nextSectionId) 
+								}}
 								className={`flex flex-col my-4 md:my-8 p-7 rounded-xl text-left md:h-[300px] gap-5 trasition duration-300 ${
 									isActive === index ? 'bg-dark-cyan' : 'bg-light-yellow hover:bg-light-salmon'
 								}`}>
