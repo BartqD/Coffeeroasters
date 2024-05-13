@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useRef,useEffect } from 'react'
 import Option from './option'
 import { SelectionData, SelectionHeading } from '@/data/SelectionData'
 import { AnimatePresence, motion } from 'framer-motion'
@@ -10,6 +10,7 @@ import Link from 'next/link'
 const SelectionProcess: React.FC = () => {
 	const steps = ['Preferences', 'Bean Type', 'Quantity', 'Grind Option', 'Deliveries']
 
+	const modalRef = useRef<HTMLDivElement>(null)
 	const [openSection, setOpenSection] = useState<string | null>(null)
 	const [modalOpen, setIsModalOpen] = useState(false)
 	const [nextSectionId, setNextSectionId] = useState<string | null>(steps[1])
@@ -50,6 +51,28 @@ const SelectionProcess: React.FC = () => {
 		e.preventDefault()
 		setIsModalOpen(prevState => !prevState)
 	}
+
+	const handleOutsideClick = (e: MouseEvent) => {
+        if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
+            setIsModalOpen(false);
+        }
+    }
+
+	useEffect(() => {
+        if (modalOpen) {
+            document.addEventListener('mousedown', handleOutsideClick);
+        } else {
+        
+            document.removeEventListener('mousedown', handleOutsideClick);
+        }
+        return () => {
+            document.removeEventListener('mousedown', handleOutsideClick);
+        };
+    }, [modalOpen]);
+
+
+
+
 
 	return (
 		<section className='max-w-[1440px] mx-auto p-6 mb-24'>
@@ -139,8 +162,10 @@ const SelectionProcess: React.FC = () => {
 				{modalOpen && (
 					<div className='fixed flex items-center inset-0 z-20 justify-center w-full min-h-full bg-black bg-opacity-60'>
 						<motion.div
+							ref={modalRef}
 							initial={{ y: -300, opacity: 0 }}
 							animate={{ y: 0, opacity: 1 }}
+							exit={{ y: -300, opacity: 0 }}
 							transition={{ duration: 0.5 }}
 							className=' w-[327px] md:w-[540px] rounded-lg bg-light-cream '>
 							<div className=' py-7 md:pt-14 md:pb-10 pl-6 md:pl-14 rounded-t-lg bg-dark-grey text-light-cream font-fraunces font-bold text-2xl md:text-4xl '>
@@ -159,12 +184,8 @@ const SelectionProcess: React.FC = () => {
 									Subscription discount codes can also be redeemed at the checkout.{' '}
 								</p>
 								<div className='flex items-center justify-center gap-5'>
-									<span className='hidden md:block text-dark-grey font-fraunces font-bold text-4xl '>
-										$14.00 / mo
-									</span>
-									<Link
-										href='/'
-										className='process-link'>
+									<span className='hidden md:block text-dark-grey font-fraunces font-bold text-4xl '>$14.00 / mo</span>
+									<Link href='/' className='process-link'>
 										Checkout <span className='md:hidden'>- $14.00 / mo</span>
 									</Link>
 								</div>
