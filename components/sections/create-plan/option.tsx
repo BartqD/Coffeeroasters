@@ -15,30 +15,33 @@ type Props = {
 	isOpen: boolean
 	toggleSection: (sectionId: string | null) => void
 	nextSectionId: string | null
+	disabled: boolean
 }
 
-const Option = ({ id, title, options, selectedTitle, isOpen, toggleSection,nextSectionId }: Props) => {
+const Option = ({ id, title, options, selectedTitle, isOpen, toggleSection, nextSectionId, disabled }: Props) => {
 	const [isActive, setIsActive] = useState(-1)
 
 	useEffect(() => {
 		const handleSelected = () => {
-			if (isActive !== -1) {
+			if (disabled) {
+				selectedTitle('_____')
+			} else if (isActive !== -1 && !disabled) {
 				selectedTitle(options[isActive].title)
 			} else {
-				selectedTitle('_____') 
+				selectedTitle('_____')
 			}
 		}
 		handleSelected()
-
-	}, [isActive, options, selectedTitle])
+	}, [isActive, options, selectedTitle, disabled])
 
 	return (
 		<div id={id} className='pb-6'>
 			<button
 				type='button'
-				className='flex items-center justify-between w-full mb-10'
+				disabled={disabled}
+				className='flex items-center justify-between w-full mb-10 disabled:opacity-20 disabled:hover:cursor-not-allowed disabled:hover:opacity-20'
 				onClick={e => {
-					e.preventDefault(),  toggleSection(id)
+					e.preventDefault(), toggleSection(id)
 				}}>
 				<span className='font-bold font-fraunces text-center text-grey text-3xl'>{title}</span>
 				<AnimatePresence>
@@ -65,10 +68,10 @@ const Option = ({ id, title, options, selectedTitle, isOpen, toggleSection,nextS
 								type='button'
 								key={index}
 								onClick={() => {
-									setIsActive(index); 
-									toggleSection(nextSectionId) 
+									setIsActive(index)
+									toggleSection(nextSectionId)
 								}}
-								className={`flex flex-col my-4 md:my-8 p-7 rounded-xl text-left md:h-[300px] gap-5 trasition duration-300 ${
+								className={`flex flex-col my-4 md:my-8 p-7 rounded-xl text-left md:h-[300px] gap-5 trasition duration-300  ${
 									isActive === index ? 'bg-dark-cyan' : 'bg-light-yellow hover:bg-light-salmon'
 								}`}>
 								<span className='font-fraunces text-2xl font-bold'>{option.title}</span>

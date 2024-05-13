@@ -16,7 +16,14 @@ const SelectionProcess: React.FC = () => {
 	const [deliveries, setDeliveries] = useState('______')
 
 	const toggleSection = (sectionId: string | null) => {
-		setOpenSection(openSection === sectionId ? null : sectionId)
+
+		if (sectionId === 'Grind Option' && preferences === 'Capsule') {
+			setOpenSection(steps[4])
+		} else{
+			setOpenSection(openSection === sectionId ? null : sectionId)
+		}
+
+		
 		if (sectionId !== null) {
 			const element = document.getElementById(sectionId)
 			if (element) {
@@ -25,10 +32,18 @@ const SelectionProcess: React.FC = () => {
 		}
 
 		const currentIndex = steps.indexOf(sectionId || '')
-		const nextIndex = currentIndex + 1
+
+		let nextIndex
+
+		if(steps[3]  && preferences === 'Capsule' ){
+			 nextIndex = currentIndex + 2
+		}
+
+		 nextIndex = currentIndex + 1
 		const nextSectionId = nextIndex < steps.length ? steps[nextIndex] : null
 		setNextSectionId(nextSectionId)
 	}
+
 
 	return (
 		<section className='max-w-[1440px] mx-auto p-6 mb-24'>
@@ -37,6 +52,7 @@ const SelectionProcess: React.FC = () => {
 					{steps.map((step, index) => (
 						<button
 							key={index}
+							disabled={step === 'Grind Option' && preferences === 'Capsule'  }
 							className={`flex gap-7 py-6 text-2xl text-left w-full font-bold font-fraunces border-b border-grey transition-opacity first:pt-0 last:border-b-0 hover:opacity-60 disabled:opacity-20 disabled:hover:cursor-not-allowed disabled:hover:opacity-20 ${
 								openSection === step ? 'opacity-80 text-dark-cyan' : 'opacity-40'
 							}`}
@@ -56,6 +72,7 @@ const SelectionProcess: React.FC = () => {
 						isOpen={openSection === steps[0]}
 						toggleSection={toggleSection}
 						nextSectionId={nextSectionId}
+						disabled={false}
 					/>
 					<Option
 						id={steps[1]}
@@ -65,6 +82,7 @@ const SelectionProcess: React.FC = () => {
 						isOpen={openSection === steps[1]}
 						toggleSection={toggleSection}
 						nextSectionId={nextSectionId}
+						disabled={false}
 					/>
 					<Option
 						id={steps[2]}
@@ -74,6 +92,7 @@ const SelectionProcess: React.FC = () => {
 						isOpen={openSection === steps[2]}
 						toggleSection={toggleSection}
 						nextSectionId={nextSectionId}
+						disabled={false}
 					/>
 					<Option
 						id={steps[3]}
@@ -83,6 +102,7 @@ const SelectionProcess: React.FC = () => {
 						isOpen={openSection === steps[3]}
 						toggleSection={toggleSection}
 						nextSectionId={nextSectionId}
+						disabled={preferences === 'Capsule'}
 					/>
 					<Option
 						id={steps[4]}
@@ -92,6 +112,7 @@ const SelectionProcess: React.FC = () => {
 						isOpen={openSection === steps[4]}
 						toggleSection={toggleSection}
 						nextSectionId={nextSectionId}
+						disabled={false}
 					/>
 
 					<div className='flex flex-col items-center gap-14 mt-28'>
@@ -105,7 +126,6 @@ const SelectionProcess: React.FC = () => {
 								<span className='text-dark-cyan'>{deliveries}</span>.”
 							</p>
 						</div>
-
 						<button className='process-link w-[50%] md:w-[30%] font-fraunces'>Create my plan!</button>
 					</div>
 				</form>
