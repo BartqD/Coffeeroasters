@@ -38,10 +38,21 @@ h4 {
 	}
 
 	.social-logo:hover {
-		@apply w-7 h-7  text-light-cyan scale-110 ;
+		@apply w-7 h-7  text-light-cyan scale-110;
 	}
 
 	.social-link:focus {
 		@apply outline-none text-light-cyan ring-opacity-100;
+	}
+
+	.not-found {
+		@apply flex h-[80vh] flex-col pt-40 text-center text-dark-grey gap-5 bg-light-cream ;
+	}
+
+	.not-found h1 {
+		@apply font-fraunces font-bold text-5xl   ;
+	}
+	.not-found p {
+		@apply font-barlow font-bold text-xl  ;
 	}
 }
