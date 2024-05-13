@@ -15,7 +15,7 @@ type Props = {
 	isOpen: boolean
 	toggleSection: (sectionId: string | null) => void
 	nextSectionId: string | null
-	disabled: boolean
+	disabled?: boolean
 }
 
 const Option = ({ id, title, options, selectedTitle, isOpen, toggleSection, nextSectionId, disabled }: Props) => {
@@ -72,7 +72,7 @@ const Option = ({ id, title, options, selectedTitle, isOpen, toggleSection, next
 									toggleSection(nextSectionId)
 								}}
 								className={`flex flex-col my-4 md:my-8 p-7 rounded-xl text-left md:h-[300px] gap-5 trasition duration-300  ${
-									isActive === index ? 'bg-dark-cyan' : 'bg-light-yellow hover:bg-light-salmon'
+									isActive === index ? 'bg-dark-cyan text-light-cream' : 'bg-light-yellow hover:bg-light-salmon'
 								}`}>
 								<span className='font-fraunces text-2xl font-bold'>{option.title}</span>
 								<span className='flex font-light'>{option.description}</span>
