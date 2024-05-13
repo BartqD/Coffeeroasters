@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useRef,useEffect } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import Option from './option'
 import { SelectionData, SelectionHeading } from '@/data/SelectionData'
 import { AnimatePresence, motion } from 'framer-motion'
@@ -53,26 +53,21 @@ const SelectionProcess: React.FC = () => {
 	}
 
 	const handleOutsideClick = (e: MouseEvent) => {
-        if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
-            setIsModalOpen(false);
-        }
-    }
+		if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
+			setIsModalOpen(false)
+		}
+	}
 
 	useEffect(() => {
-        if (modalOpen) {
-            document.addEventListener('mousedown', handleOutsideClick);
-        } else {
-        
-            document.removeEventListener('mousedown', handleOutsideClick);
-        }
-        return () => {
-            document.removeEventListener('mousedown', handleOutsideClick);
-        };
-    }, [modalOpen]);
-
-
-
-
+		if (modalOpen) {
+			document.addEventListener('mousedown', handleOutsideClick)
+		} else {
+			document.removeEventListener('mousedown', handleOutsideClick)
+		}
+		return () => {
+			document.removeEventListener('mousedown', handleOutsideClick)
+		}
+	}, [modalOpen])
 
 	return (
 		<section className='max-w-[1440px] mx-auto p-6 mb-24'>
